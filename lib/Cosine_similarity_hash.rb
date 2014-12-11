@@ -1,4 +1,8 @@
 class Cosine_similarity_hash
+	def initialize()
+
+	end 
+
 	def cosine_sim( tf_idf ,query)
 		@tf_idf = tf_idf
     	@doc_length = self.length(@tf_idf)
