@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 =begin
 	Author: Ivin Polo Sony 
 	Class description: The Class contains function which are used to calculate Cosine similarity of a corpus of datasets.
@@ -21,14 +22,34 @@ class Cosine_similarity_hash
 		@hashCosine = {}
 
 		tf_idf.each do |hash| #docs 
+=======
+class Cosine_similarity_hash
+	def initialize()
+
+	end 
+
+	def cosine_sim( tf_idf ,query)
+		@tf_idf = tf_idf
+    	@doc_length = self.length(@tf_idf)
+    	@query = query
+    	@query_doc_length = self.length(@query)
+		@hashCosine = {}
+
+		@tf_idf.each do |hash| #docs 
+>>>>>>> 7069cdf475a45a30ae352cad6199863cb4da062c
 			docname = hash[0]
 			word_cnt_hash = hash[1]
 			sum = 0 
 			word_cnt_hash.each do |word_cnt|
 				word = word_cnt[0]
 				count = word_cnt[1]
+<<<<<<< HEAD
 				if query.values.first.has_key?("#{word}")
 					 mult = query.values.first["#{word}"].to_f * count.to_f 
+=======
+				if @query.values.first.has_key?("#{word}")
+					 mult = @query.values.first["#{word}"].to_f * count.to_f 
+>>>>>>> 7069cdf475a45a30ae352cad6199863cb4da062c
 					 sum = sum + mult
 				end 	
 			end
@@ -38,6 +59,7 @@ class Cosine_similarity_hash
 			@hashCosine["#{docname}"] = sum/deno 
 		end 
 		
+<<<<<<< HEAD
 		return  @hashCosine
 	end  #cosine_sim()	
 
@@ -45,6 +67,15 @@ class Cosine_similarity_hash
 		#@tf_idf = tf_idf 
 		@hashLength = {}
 		    tf_idf.each do |hash| #docs 
+=======
+		return @hashCosine
+	end  #cosine_sim()	
+
+	def length(tf_idf)
+		@tf_idf = tf_idf 
+		@hashLength = {}
+		    @tf_idf.each do |hash| #docs 
+>>>>>>> 7069cdf475a45a30ae352cad6199863cb4da062c
 		    	docname = hash[0]
 				word_cnt_hash = hash[1]
 				sum = 0
@@ -56,6 +87,7 @@ class Cosine_similarity_hash
 				end
 				@hashLength["#{docname}"] = Math.sqrt(sum)  
 		    end 
+<<<<<<< HEAD
 		     @hashLength
 		    return  @hashLength
 	end # length() 
@@ -63,13 +95,21 @@ class Cosine_similarity_hash
 
 
 
+=======
+		    return @hashLength
+	end # length() 
+>>>>>>> 7069cdf475a45a30ae352cad6199863cb4da062c
 end #Class  
 
 
 
 
 # SAMPLE INPUT 
+<<<<<<< HEAD
 
+=======
+=begin
+>>>>>>> 7069cdf475a45a30ae352cad6199863cb4da062c
 
 
 
@@ -130,5 +170,9 @@ obj = Cosine_similarity_hash.new
 						}
 
 	p obj.cosine_sim( @tf_idf ,  @query  )
+<<<<<<< HEAD
 
 	
+=======
+=end
+>>>>>>> 7069cdf475a45a30ae352cad6199863cb4da062c
